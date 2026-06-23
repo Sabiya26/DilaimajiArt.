@@ -1,0 +1,1257 @@
+:root {
+  --primary: rgb(8, 158, 2);
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #000000b0;
+  min-height: 5000px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #503c28;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  overflow: visible; /*Tambahan*/
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#Product-menu {
+  display: none;
+}
+
+/* Navbar search form */
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: #fff;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--bg);
+  padding: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: var(--bg);
+}
+
+/* Shopping Cart */
+.shopping-cart {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: 100vh;
+  width: 35rem;
+  padding: 0 1.5rem;
+  background-color: #fff;
+  color: var(--bg);
+  transition: 0.3s;
+  z-index: 99999;
+}
+
+.shopping-cart.active {
+  right: 0;
+}
+
+.shopping-cart .cart-item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #666;
+  position: relative;
+}
+
+.shopping-cart img {
+  height: 6rem;
+  border-radius: 50%;
+}
+
+.shopping-cart h3 {
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.shopping-cart .item-price {
+  font-size: 1.2rem;
+}
+
+.shopping-cart .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.shopping-cart .remove-item:hover {
+  color: var(--primary);
+}
+
+/* Cart item styling */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-bottom: 1px dashed #eee;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-info p {
+  margin: 0;
+}
+
+.cart-item-name {
+  font-size: 13px;
+  font-weight: bold;
+  color: #222;
+}
+
+.cart-item-price {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px !important;
+}
+
+.cart-qty-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.cart-qty-btn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  transition: background 0.2s;
+}
+
+.cart-qty-btn:hover {
+  background: #2e7d32;
+  color: white;
+}
+
+.cart-qty-number {
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+.cart-delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e53935;
+  font-size: 18px;
+  padding: 5px;
+  flex-shrink: 0;
+}
+
+.cart-delete-btn:hover {
+  color: #b71c1c;
+}
+/*Hero Section*/
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/header-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0));
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 151, 87, 0.8) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  /*max-width: 60rem;*/
+  width: 100%;
+  text-align: left;
+  position: static;
+  top: 130px;
+  flex: 1;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: #000000;
+  text-shadow: 1px 1px 3px rgba(0, 151, 87, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: rgb(8, 158, 2);
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 3px rgba(0, 151, 87, 0.5);
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: rgb(8, 158, 2);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(0, 151, 87, 0.5);
+}
+
+/*About Section*/
+.about,
+.Produk,
+.products-unggulan,
+.contact {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.Produk h2,
+.products-unggulan h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  color: #000000;
+  margin-bottom: 3rem;
+}
+
+.about h2 span,
+.Produk h2 span,
+.products-unggulan h2 span,
+.contact h2 span {
+  color: rgb(8, 158, 2);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+}
+
+/*Menu Section*/
+.Produk h2,
+.products-unggulan h2,
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.Produk p,
+.products-unggulan p,
+.contact p {
+  text-align: center;
+  max-width: 40rem;
+  margin: auto;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+.Produk .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.Produk .row .produk-card {
+  width: 180px;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.Produk .row .produk-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.Produk .row .produk-card .produk-card-title {
+  margin: 0.3rem auto 0.5rem;
+}
+
+.Produk .row .produk-card .produk-card-prize {
+  margin-top: 0rem;
+  font-size: 1.2rem;
+}
+
+/* Produk Unggulan */
+
+.products-unggulan .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.products-unggulan .products-unggulan-card {
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
+}
+
+.products-unggulan .products-unggulan-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.products-unggulan .products-unggulan-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+  margin: 0.3rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products-unggulan .products-unggulan-icons a:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.products-unggulan .products-unggulan-image {
+  padding: 1rem 0;
+}
+
+.products-unggulan .products-unggulan-image img {
+  height: 25rem;
+}
+
+.products-unggulan .products-unggulan-content h3 {
+  font-size: 2rem;
+}
+
+.products-unggulan .products-unggulan-stars {
+  font-size: 1.7rem;
+  padding: 0.8rem;
+  color: var(--primary);
+}
+
+.products-unggulan .products-unggulan-stars .star-full {
+  fill: var(--primary);
+}
+
+.products-unggulan .products-unggulan-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.products-unggulan .products-unggulan-price span {
+  text-decoration: line-through;
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+/*Contact Section*/
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #222;
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: black;
+  border: 1px solid #eee;
+  padding-left: 2rem;
+  color: #fff;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: #fff;
+}
+
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: rgb(8, 158, 2);
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+/*Footer*/
+footer {
+  background-color: var(--bg);
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: rgb(8, 158, 2);
+}
+
+footer .links {
+  margin-bottom: 1.4rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+footer .credit a {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Modal box */
+/* item detail */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: var(--bg);
+  margin: 15% auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  animation: animateModal 0.5s;
+}
+
+/* Modal Animation */
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-container .close-icon {
+  position: absolute;
+  right: 1rem;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal-content img {
+  height: 20rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.modal-content a {
+  display: flex;
+  gap: 1rem;
+  width: 12rem;
+  background-color: var(--primary);
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+}
+
+/* Media Queries*/
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #Product-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .navbar .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+
+  .Produk p {
+    font-size: 1.5rem;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row .form {
+    padding-top: 0;
+  }
+
+  .modal-content {
+    flex-wrap: wrap;
+  }
+}
+
+/* PRODUCTS */
+.products {
+  padding: 8rem 7% 1.4rem;
+  background-color: #ffffff;
+  overflow: hidden; /*Tambahan*/
+}
+
+.products h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.products h2 span {
+  color: rgb(8, 158, 2);
+}
+
+.products p {
+  text-align: center;
+  max-width: 35rem;
+  margin: auto;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.products .row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.product-card {
+  width: 350px;
+  border: 1px solid #ffffff;
+  padding: 2rem;
+  text-align: center;
+  background-color: rgb(8, 158, 2);
+  position: relative; /*tambahan*/
+  overflow: hidden; /*tambahan*/
+}
+
+.product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative; /* Tambahan */
+  z-index: 1; /* Tambahan */
+}
+
+.product-icons a {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #999;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.product-icons a:hover {
+  background-color: #000000;
+  border-color: #ffffff;
+}
+
+.product-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.product-content h3 {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+.product-stars {
+  margin: 1rem 0;
+}
+
+.product-stars svg {
+  width: 18px;
+  height: 18px;
+  fill: #d8dac7;
+  stroke: #ffffff;
+}
+
+.product-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.product-price span {
+  font-size: 1rem;
+  font-weight: normal;
+  text-decoration: line-through;
+  color: #999;
+}
+
+/*body card*/
+.product-content h3 {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.product-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.product-price span {
+  color: #ddd;
+}
+
+/* Search tampilan*/
+.search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: #fff;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+  z-index: 99999;
+}
+
+.search-form.active {
+  transform: scaleY(1);
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* ===== EFEK TIMBUL / 3D LIFT ===== */
+
+/* Produk Card (section Produk Kami) */
+.produk-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.produk-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(8, 158, 2, 0.3);
+}
+
+/* Product Card (section Produk Unggulan) */
+.product-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar Link */
+.navbar .navbar-nav a {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+  display: inline-block;
+}
+
+.navbar .navbar-nav a:hover {
+  transform: translateY(-3px);
+  color: var(--primary);
+}
+
+/* Navbar Icon (search, cart, menu) */
+.navbar-extra a {
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+  display: inline-block;
+}
+
+.navbar-extra a:hover {
+  transform: translateY(-4px) scale(1.2);
+  color: var(--primary);
+}
+
+/* Tombol Kirim Pesan (Kontak) */
+.btn {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(8, 158, 2, 0.5);
+  background-color: #065f03;
+}
+
+/* Tombol Slide CTA */
+.slide-btn {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+.slide-btn:hover {
+  transform: translateY(-4px) scale(1.05) !important;
+  box-shadow: 0 10px 25px rgba(8, 158, 2, 0.5);
+}
+
+/* ===== PORTFOLIO SECTION ===== */
+.portfolio {
+  padding: 8rem 0 4rem;
+  background-color: #0a0a0a;
+  overflow: hidden;
+}
+
+.portfolio h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.portfolio h2 span {
+  color: rgb(8, 158, 2);
+}
+
+.portfolio > p {
+  text-align: center;
+  color: #aaa;
+  font-size: 1.3rem;
+  margin-bottom: 4rem;
+}
+
+/* Area slider + tombol */
+.portfolio-slider-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 3rem;
+  position: relative;
+}
+
+/* Wrapper: sembunyikan overflow */
+.portfolio-track-wrapper {
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  /* Efek fade di kiri & kanan */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/* Track yang bergerak */
+.portfolio-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scrollPortfolio 20s linear infinite;
+}
+
+/* Pause saat hover */
+.portfolio-track:hover {
+  animation-play-state: paused;
+}
+
+/* Pause animasi saat mode manual aktif */
+.portfolio-track.manual-mode {
+  animation: none;
+  transition: transform 0.5s ease;
+}
+
+/* Animasi scroll ke kiri */
+@keyframes scrollPortfolio {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tombol Prev/Next */
+.portfolio-nav-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid rgb(8, 158, 2);
+  background: transparent;
+  color: rgb(8, 158, 2);
+  font-size: 1.6rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    color 0.3s ease;
+  z-index: 10;
+}
+
+.portfolio-nav-btn:hover {
+  background: rgb(8, 158, 2);
+  color: #fff;
+  transform: scale(1.15);
+}
+
+.portfolio-nav-btn:active {
+  transform: scale(0.95);
+}
+
+/* Item portfolio */
+.portfolio-item {
+  width: 250px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1a1a;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(8, 158, 2, 0.3);
+}
+
+.portfolio-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Gambar preview */
+.portfolio-preview {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.portfolio-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-preview img {
+  transform: scale(1.1);
+}
+
+/* Overlay saat hover */
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 158, 2, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #fff;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay svg {
+  width: 3rem;
+  height: 3rem;
+  stroke: #fff;
+}
+
+.portfolio-overlay span {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Info di bawah gambar */
+.portfolio-info {
+  padding: 1.2rem 1.5rem;
+}
+
+.portfolio-info h3 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.portfolio-info p {
+  font-size: 1.1rem;
+  color: #888;
+  margin: 0;
+}
+
+/* Social Media Footer */
+footer .socials a {
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+  display: inline-block;
+}
+
+footer .socials a:hover {
+  transform: translateY(-5px) scale(1.2);
+  color: rgb(8, 158, 2);
+}
+
+/* Footer Links */
+footer .links a {
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+  display: inline-block;
+}
+
+footer .links a:hover {
+  transform: translateY(-3px);
+  color: rgb(8, 158, 2);
+}
+
+/* Tombol +/- Cart */
+.cart-qty-btn {
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.cart-qty-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Icon Cart & Delete di keranjang */
+.cart-delete-btn {
+  transition: transform 0.2s ease;
+}
+
+.cart-delete-btn:hover {
+  transform: scale(1.3) rotate(10deg);
+}
+
+/* Tombol Slider Prev/Next */
+.slider-btn {
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.slider-btn:hover {
+  transform: translateY(-50%) scale(1.15);
+  background: rgba(8, 158, 2, 0.9);
+}
+
+/* Dot Slider */
+.dot {
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.dot:hover {
+  transform: scale(1.4);
+  background: rgb(8, 158, 2);
+}
