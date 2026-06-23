@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dilaimaji Art</title>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Feather Icons-->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!--My Style-->
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+
+  <body>
+    <!--Navbar Start-->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Dilaimaji<span>Art</span>.</a>
+
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#Produk">Produk</a>
+        <a href="#products-unggulan">Produk Unggulan</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart" style="position: relative"
+          ><i data-feather="shopping-cart"></i>
+          <span
+            id="cart-badge"
+            style="
+              display: none;
+              position: absolute;
+              top: -8px;
+              right: -8px;
+              background: red;
+              color: white;
+              border-radius: 50%;
+              width: 18px;
+              height: 18px;
+              font-size: 11px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+            >0</span
+          >
+        </a>
+        <a href="#" id="Product-menu"> <i data-feather="menu"></i></a>
+      </div>
+
+      <!-- Shopping Cart start -->
+      <div class="shopping-cart">
+        <!-- Header Cart -->
+        <div
+          style="
+            padding: 15px 20px;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <h3 style="margin: 0; font-size: 16px">Keranjang Belanja</h3>
+          <span id="cart-total-items" style="font-size: 12px; color: #888"
+            >0 item</span
+          >
+        </div>
+
+        <!-- List Produk Cart -->
+        <div id="cart-list">
+          <p
+            style="
+              text-align: center;
+              padding: 30px 20px;
+              color: #aaa;
+              font-size: 14px;
+            "
+          >
+            Keranjang kosong
+          </p>
+        </div>
+
+        <!-- Footer Cart: Total + Checkout -->
+        <div
+          id="cart-footer"
+          style="display: none; padding: 15px 20px; border-top: 2px solid #eee"
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 12px;
+              font-size: 14px;
+            "
+          >
+            <span>Total Harga:</span>
+
+            <span
+              id="cart-total-price"
+              style="font-weight: bold; color: #2e7d32"
+              >IDR 0</span
+            >
+          </div>
+
+          <button
+            style="
+              width: 100%;
+              padding: 10px;
+              background: #2e7d32;
+              color: white;
+              border: none;
+              border-radius: 8px;
+              font-size: 14px;
+              font-weight: bold;
+              cursor: pointer;
+            "
+          >
+            // Checkout
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Form Start -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box"><i data-feather="search"></i></label>
+      </div>
+      <!-- Search Form End -->
+      <!-- Shopping Cart end -->
+    </nav>
+
+    <!--Navbar end-->
+
+    <!--Hero Section Start-->
+    <section class="hero" id="home">
+      <div class="mask-container">
+        <main class="content">
+          <h1>Dilaimaji <span>Art</span></h1>
+          <p>
+            Hai Selamat datang di situs DilaimajiArt! Temukan desain yang kamu
+            butuhkan hanya di sini!
+          </p>
+        </main>
+      </div>
+    </section>
+    <!--Hero Section end-->
+
+    <!--About Section Start-->
+    <section id="about" class="about">
+      <h2><span>Tentang</span> Kami</h2>
+
+      <div class="row">
+        <div class="about-img">
+          <img src="img/tentang-kami.png" alt="Tentang Kami" />
+        </div>
+        <div class="content">
+          <h3>Kenapa Tercipta DilaimajiArt?</h3>
+          <p>
+            DilaimajiArt tercipta sebagai website portofolio Sabiya Adila Putri
+            kemudian berkembang sebagai website yang juga menjual jasa desain
+            dan produk desain dari Dila
+          </p>
+          <p>
+            Website ini memudahkan pengguna dalam mewujudkan desain impian dan
+            juga membeli produk kreasi Dila yang pastinya keren dan unik untuk
+            kamu.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--About Section end-->
+
+    <!--Produk Section Start-->
+    <section id="Produk" class="Produk">
+      <h2><span>Produk</span> Kami</h2>
+      <p>Berikut adalah beberapa desain yang bisa kamu pilih</p>
+
+      <div class="row">
+        <div class="produk-card">
+          <img
+            src="img/porto/Porto_1.jpg"
+            alt="Desain Karakter Hero"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Desain Karakter Hero-</h3>
+          <p class="produk-card-prize">IDR Start-50k</p>
+        </div>
+        <div class="produk-card">
+          <img
+            src="img/porto/Porto_2.png"
+            alt="Desain Book Company"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Desain Book Company-</h3>
+          <p class="produk-card-prize">IDR Start-75k</p>
+        </div>
+        <div class="produk-card">
+          <img
+            src="img/porto/Porto_3.png"
+            alt="Desain Infografis"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Desain Infografis-</h3>
+          <p class="produk-card-prize">IDR Start-60k</p>
+        </div>
+        <div class="produk-card">
+          <img
+            src="img/porto/Porto_4.png"
+            alt="Desain UI/UX"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Desain UI/UX-</h3>
+          <p class="produk-card-prize">IDR Start-80k</p>
+        </div>
+        <div class="produk-card">
+          <img
+            src="img/porto/Porto_5.png"
+            alt="Desain Ilustrasi Buku Cerita Anak"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Desain Ilustrasi Buku Cerita Anak-</h3>
+          <p class="produk-card-prize">IDR Start-200k</p>
+        </div>
+
+        <div class="produk-card">
+          <img
+            src="img/porto/Porto_6.png"
+            alt="Desain Kemasan"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Desain Kemasan-</h3>
+          <p class="produk-card-prize">IDR Start-100k</p>
+        </div>
+
+        <div class="produk-card">
+          <img
+            src="img/Brosur_Usaha.png"
+            alt="Brosur Usaha"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Brosur Usaha A5-</h3>
+          <p class="produk-card-prize">IDR Start-50k</p>
+        </div>
+        <div class="produk-card">
+          <img
+            src="img/Produk/Produk_1.png"
+            alt="Desain Karakter"
+            class="produk-card-img"
+          />
+          <h3 class="produk-card-title">-Desain Karakter-</h3>
+          <p class="produk-card-prize">IDR Start-50k</p>
+        </div>
+      </div>
+    </section>
+    <!--Produk Section End-->
+
+    <!-- Products Section start -->
+    <section class="products" id="products-unggulan">
+      <h2><span>Produk </span>Unggulan</h2>
+      <p>Berikut adalah beberapa Produk Unggulan yang bisa kamu pilih</p>
+
+      <div class="row">
+        <div
+          class="product-card"
+          data-name="Brosur Usaha"
+          data-price="IDR 30K"
+          data-img="img/Brosur_Usaha.png"
+        >
+          <div class="product-icons">
+            <a href="#" class="add-to-cart-button"
+              ><i data-feather="shopping-cart"></i
+            ></a>
+            <a href="#" class="item-detail-button"
+              ><i data-feather="eye"></i
+            ></a>
+          </div>
+          <div class="product-image">
+            <img src="img/Brosur_Usaha.png" alt="Product 1" />
+          </div>
+          <div class="product-content">
+            <h3>Brosur Usaha</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+
+        <div
+          class="product-card"
+          data-name="Desain Maskot"
+          data-price="IDR 800K"
+          data-img="img/Desain Maskot.png"
+        >
+          <div class="product-icons">
+            <a href="#" class="add-to-cart-button"
+              ><i data-feather="shopping-cart"></i
+            ></a>
+            <a href="#" class="item-detail-button"
+              ><i data-feather="eye"></i
+            ></a>
+          </div>
+          <div class="product-image">
+            <img src="img/Desain_Maskot.png" alt="Product 1" />
+          </div>
+          <div class="product-content">
+            <h3>Desain Maskot</h3>
+            <div class="product-stars">
+              <i data-feather="star"></i>
+              <i data-feather="star"></i>
+              <i data-feather="star"></i>
+              <i data-feather="star"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 800K <span>IDR 1.000K</span></div>
+          </div>
+        </div>
+
+        <div
+          class="product-card"
+          data-name="Infografis"
+          data-price="IDR 30K"
+          data-img="img/Infogarfis.png"
+        >
+          <div class="product-icons">
+            <a href="#" class="add-to-cart-button"
+              ><i data-feather="shopping-cart"></i
+            ></a>
+            <a href="#" class="item-detail-button"
+              ><i data-feather="eye"></i
+            ></a>
+          </div>
+          <div class="product-image">
+            <img src="img/Infogarfis.png" alt="Product 1" />
+          </div>
+          <div class="product-content">
+            <h3>Infografis</h3>
+            <div class="product-stars">
+              <i data-feather="star"></i>
+              <i data-feather="star"></i>
+              <i data-feather="star"></i>
+              <i data-feather="star"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Products Section end -->
+
+    <!--Portfolio Section Start-->
+    <!--Portfolio Section Start-->
+    <section id="portfolio" class="portfolio">
+      <h2><span>Portofolio</span> Kami</h2>
+      <p>Kumpulan karya terbaik DilaimajiArt</p>
+
+      <div class="portfolio-slider-area">
+        <!-- Tombol Prev -->
+        <button class="portfolio-nav-btn prev-btn" id="portoPrev">
+          &#10094;
+        </button>
+
+        <!-- Track Wrapper -->
+        <div class="portfolio-track-wrapper" id="portoWrapper">
+          <div class="portfolio-track" id="portoTrack">
+            <!-- Item 1 -->
+            <div class="portfolio-item">
+              <a
+                href="pdf/porto_1_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_1.jpg" alt="Portofolio 1" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain Karakter</h3>
+                  <p>Ilustrasi karakter game</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="portfolio-item">
+              <a
+                href="pdf/porto_2_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_2.png" alt="Portofolio 2" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Fotografi Company Project</h3>
+                  <p>Branding Company Animasi Lokal</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="portfolio-item">
+              <a
+                href="img/porto/Porto_3.png"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_3.png" alt="Portofolio 3" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain Poster</h3>
+                  <p>Infografis lingkungan</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="portfolio-item">
+              <a
+                href="pdf/porto_3_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_4.png" alt="Portofolio 4" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain UI/UX</h3>
+                  <p>Desain UI/UX Aplikasi Re-Food</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="portfolio-item">
+              <a
+                href="pdf/porto_6_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_5.png" alt="Portofolio 5" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Buku Cerita Anak</h3>
+                  <p>Desain Ilustrasi Cerita Anak</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="portfolio-item">
+              <a
+                href="pdf/Porto_7_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_6.png" alt="Portofolio 6" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain Kemasan</h3>
+                  <p>Ilustrasi Desain Kemasan</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="portfolio-item">
+              <a
+                href="pdf/Porto_8_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_7.png" alt="Portofolio 7" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain Maskot Kuliner</h3>
+                  <p>Ilustrasi Desain Maskot Kuliner Gacoan</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="portfolio-item">
+              <a
+                href="pdf/Porto_9_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_8.png" alt="Portofolio 8" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain Aset Game</h3>
+                  <p>Desain karakter dan elemen game</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="portfolio-item clone">
+              <a
+                href="pdf/porto_1_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_1.jpg" alt="Portofolio 1" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain Karakter</h3>
+                  <p>Ilustrasi karakter game</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="portfolio-item clone">
+              <a
+                href="pdf/porto_2_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_2.png" alt="Portofolio 2" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Fotografi Company Project</h3>
+                  <p>Branding Company Animasi Lokal</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="portfolio-item clone">
+              <a
+                href="img/porto/Porto_3.png"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_3.png" alt="Portofolio 3" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain Poster</h3>
+                  <p>Infografis lingkungan</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="portfolio-item clone">
+              <a
+                href="pdf/porto_3_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_4.png" alt="Portofolio 4" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain UI/UX</h3>
+                  <p>Desain UI/UX Aplikasi Re-Food</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="portfolio-item clone">
+              <a
+                href="pdf/porto_6_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_5.png" alt="Portofolio 5" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Buku Cerita Anak</h3>
+                  <p>Desain Ilustrasi Cerita Anak</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="portfolio-item clone">
+              <a
+                href="pdf/Porto_7_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_6.png" alt="Portofolio 6" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain Kemasan</h3>
+                  <p>Ilustrasi Desain Kemasan</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="portfolio-item clone">
+              <a
+                href="pdf/Porto_8_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_7.png" alt="Portofolio 7" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain Maskot Kuliner</h3>
+                  <p>Ilustrasi Desain Maskot Kuliner Gacoan</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="portfolio-item clone">
+              <a
+                href="pdf/Porto_9_ppt.pdf"
+                target="_blank"
+                class="portfolio-link"
+              >
+                <div class="portfolio-preview">
+                  <img src="img/porto/Porto_8.png" alt="Portofolio 8" />
+                  <div class="portfolio-overlay">
+                    <i data-feather="file-text"></i>
+                    <span>Lihat PDF</span>
+                  </div>
+                </div>
+                <div class="portfolio-info">
+                  <h3>Desain Aset Game</h3>
+                  <p>Desain karakter dan elemen game</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tombol Next -->
+        <button class="portfolio-nav-btn next-btn" id="portoNext">
+          &#10095;
+        </button>
+      </div>
+    </section>
+    <!--Portfolio Section End-->
+
+    <!--Contact Section Start-->
+    <section id="contact" class="contact">
+      <h2><span>Kontak </span> Kami</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eaque
+        voluptate aut perferendis enim! In!
+      </p>
+
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.0427074720947!2d110.39166379908963!3d-7.048175453109813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708bc155555555%3A0x1b8b56d2e2397635!2sFakultas%20Bahasa%20dan%20Seni%20(FBS)%20UNNES!5e0!3m2!1sid!2sid!4v1780126076212!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
+
+        <form action="">
+          <div class="input-group">
+            <i data-feather="user"></i>
+            <input type="text" placeholder="nama" />
+          </div>
+
+          <div class="input-group">
+            <i data-feather="mail"></i>
+            <input type="email" placeholder="email" />
+          </div>
+
+          <div class="input-group">
+            <i data-feather="phone"></i>
+            <input type="tel" placeholder="no hp" />
+          </div>
+
+          <button type="submit" class="btn">kirim pesan</button>
+        </form>
+      </div>
+    </section>
+    <!--Contact Section End-->
+
+    <!--Foother Start-->
+    <footer>
+      <div class="socials">
+        <a
+          href="https://www.instagram.com/dil4_2604"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i data-feather="instagram"></i
+        ></a>
+        <a
+          href="https://www.youtube.com/@dila2604"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i data-feather="youtube"></i
+        ></a>
+      </div>
+
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#product">Produk Kami</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+      <div class="credit">
+        <p>Created by <a href="">Sabiya Adila Putri</a>. | &copy; 2026.</p>
+      </div>
+    </footer>
+    <!--Foother End-->
+
+    <!-- Modal Box Item Detail star  -->
+    <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal-content">
+          <img src="img/products/1.jpg" alt="Product 1" />
+          <div class="product-content">
+            <h3>Product 1</h3>
+            <p>Karakter unik yang siap menghidupkan game mu!</p>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+            <a href="#"
+              ><i data-feather="shopping-cart"></i> <span>add to cart</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Box Item Detail end -->
+
+    <!--Feather Icons-->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- My Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
